@@ -1,0 +1,19 @@
+{
+  "inforeceitas": [
+    {
+      "id": "1",
+      "avatar_url": "https://www.google.com",
+      "recipes_name": "testando",
+      "recipes_author": "continuação do teste",
+      "ingredients": [
+        "teste 2"
+      ],
+      "preparations": [
+        "teste 3"
+      ],
+      "add_information": [
+        "test"
+      ]
+    }
+  ]
+}
