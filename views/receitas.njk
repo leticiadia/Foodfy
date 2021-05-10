@@ -1,0 +1,47 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    
+  <section class="flex-container">
+
+    {% for item in items %}
+            <div class="flex-item card" id="{{ item.id }}">
+                <div class="card_img">
+                    <img src="{{ item.image }}" alt="Imagem de {{ item.title }}">
+                </div>
+
+                <div class="card_content">
+                    <p class="text_p">{{ item.title }}</p>                   
+                </div>
+
+                <div class="card_info">
+                    <p>{{ item.author }}</p>
+                </div>
+            </div>
+
+    {% endfor %}
+  </section>
+
+  <section class="flex-container">
+
+    {% for item in items %}
+            <div class="flex-item card" id="{{ item.id }}">
+                <div class="card_img">
+                    <img src="{{ item.image }}" alt="Imagem de {{ item.title }}">
+                </div>
+
+                <div class="card_content">
+                    <p class="text_p">{{ item.title }}</p>                   
+                </div>
+
+                <div class="card_info">
+                    <p>{{ item.author }}</p>
+                </div>
+            </div>
+
+    {% endfor %}
+  </section>
+  
+    <script src="/script.js"></script>
+
+{% endblock %}

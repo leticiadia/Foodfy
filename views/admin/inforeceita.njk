@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoWhite">
+                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+            </div>
+        </header>
+
+        {% block content%}
+
+            <div class="card">
+                <section class="avatar">
+                    <div class="title">
+                        <h3>Receita: Triplo Bacon Burger</h3>
+                        <a href="#">Editar receita</a>
+                    </div>
+                    <img src="/img/burgers.png">
+
+                    <div class="subtitle">
+                        <h2>Triplo Bacon Burger</h2>
+                        <p>por Jorge Relato</p>
+                    </div>
+                </section>
+
+                <section class="details">
+                    <div class="item">
+                        <div>Ingredientes</div>
+                        <div>
+                            <ul>
+                                <li>- 3kg de carne moída (escolha sua carne magra e macia);</li>
+                                <li>- 300g de bacon;</li>
+                                <li>- 1 ovo;</li>
+                                <li>- 3 colheres (sopa) de farinha de trigo;</li>
+                                <li>- 3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde
+                                    processados no liquidificador;
+                                </li>
+                                <li>- 30ml de água gelada;</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div>Modo de preparo</div>
+                        <div>
+                            <ul>
+                                <li>- 3kg de carne moída (escolha sua carne magra e macia);</li>
+                                <li>- 300g de bacon;</li>
+                                <li>- 1 ovo;</li>
+                                <li>- 3 colheres (sopa) de farinha de trigo;</li>
+                                <li>- 3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde
+                                    processados no liquidificador;
+                                </li>
+                                <li>- 30ml de água gelada;</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div>Informações adicionais</div>
+                        <div>
+                            <p></p>
+
+                            <p></p>   
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        {% endblock%}
+
+            
+
+    </body>
+</html>

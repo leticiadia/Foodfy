@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoWhite">
+                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+            </div>
+        </header>
+
+        {% block content%}
+            <div class="card">           
+                <section class="edit"> 
+                    <form method="POST" action="/admin/inforeceitas?_method=PUT">
+                        <div class="title-edit">
+                            <h2>Editando receita</h2>
+                            <button type="submit" class="button_submit">Salvar receita</button>
+                        </div>
+                        
+                        {% include 'admin/fields.njk' %}
+
+                        <input type="hidden" name="id" value="{{ inforeceita.id }}">
+                    </form>
+
+                    <form id="form-delete" method="POST" action="/admin/inforeceitas?_method=DELETE">
+                        
+                        <input type="hidden" name="id" value="{{ inforeceita.id }}">
+
+                        <button type="submit" id="delete" class="button_submit">Deletar</button>
+
+                    </form> 
+                </section>
+            </div>
+        {% endblock%}
+
+            
+
+    </body>
+</html>

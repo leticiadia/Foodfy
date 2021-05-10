@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoWhite">
+                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+            </div>
+        </header>
+
+        {% block content%}
+
+            <div class="card">
+                <section class="avatar">
+                    <div class="title">
+                        <h3>Receita: {{ inforeceita.recipes_name }}</h3>
+                        <a href="/admin/inforeceitas/{{ inforeceita.id }}/edit">Editar receita</a>
+                    </div>
+                        <img src="{{ inforeceita.avatar_url }}">
+
+                    <div class="subtitle">
+                        <h2>{{ inforeceita.recipes_name }}</h2>
+                        <p>por {{ inforeceita.recipes_author }}</p>
+                    </div>
+                </section>
+
+                <section class="details">
+                    <div class="item">
+                        <div>Ingredientes</div>
+                        <div>
+                            <ul>
+                                {% for ingredient in inforeceita.ingredients %}
+                                    <li>- {{ ingredient }};</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                    <div class="item">
+                        <div>Modo de preparo</div>
+                        <div>
+                            <ul>
+                                {% for preparation in inforeceita.preparations %}
+                                    <li>- {{ preparation }};</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <div>Informações adicionais</div>
+                        <div>
+                            {% for information in inforeceita.add_information %}
+                                <p>{{ information }}</p>  
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        {% endblock%}
+
+            
+
+    </body>
+</html>
