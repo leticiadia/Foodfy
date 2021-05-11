@@ -2,7 +2,7 @@
     <div class="items">
         <div>Imagem da receita</div>
         <div>
-            <input type="url" name="avatar_url" value="{{ inforeceita.avatar_url }}">
+            <input type="url" name="avatar_url" value="{{ inforeceita.avatar_url }}" placeholder="https://">
         </div>
     </div>
 
@@ -21,24 +21,20 @@
     </div>
 
     <div id="ingredients" class="items">
+        <div>Ingredientes</div>
         <div class="ingredient">
-            <div>Ingredientes</div>
-            <div>
-                <input type="text" name="ingredients[]" value="{{ inforeceita.ingredients }}">
-            </div>
-            <a href="" id="add-ingredient">Adicionar novo ingrediente</a>
+            <input type="text" name="ingredients[]" value="{{ inforeceita.ingredients }}">
         </div>
     </div>
+    <button type="button" class="add-ingredient">Adicionar novo ingrediente</button>
 
     <div id="preparations" class="items">
+        <div>Modo de preparo</div>
         <div class="preparation">
-            <div>Modo de preparo</div>
-            <div>
-                <input type="text" name="preparations[]" value="{{ inforeceita.preparations }}">
-            </div>
-            <a href="" id="mode-preparation">Adicionar novo passo</a>
+            <input type="text" name="preparations[]" value="{{ inforeceita.preparations }}">
         </div>
     </div>
+    <button type="button" class="add-mode-preparation">Adicionar novo passo</button>
 
     <div class="items">
         <div>Informações adicionais</div>
