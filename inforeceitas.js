@@ -49,8 +49,7 @@ exports.show = function(req, res){
     }
 
     const inforeceita = {
-        ...foundInforeceita,
-        ingredients: foundInforeceita.ingredients.split(',')
+        ...foundInforeceita
     }
 
     return res.render('admin/show', { inforeceita })
