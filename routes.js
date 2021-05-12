@@ -32,9 +32,7 @@ routes.get('/inforeceitas', function(req, res){
 })
 
 
-routes.get('/admin/inforeceitas', function(req, res){
-    return res.render('admin/inforeceita')
-})
+routes.get('/admin/inforeceitas', inforeceitas.index)
 
 routes.get('/admin/inforeceitas/create', function(req, res){
     return res.render('admin/create')
