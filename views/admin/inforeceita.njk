@@ -17,68 +17,27 @@
         </header>
 
         {% block content%}
+            <div class="container">
+                  <h2>Gerenciar receitas</h2>
 
-            <div class="card">
-                <section class="avatar">
-                    <div class="title">
-                        <h3>Receita: Triplo Bacon Burger</h3>
-                        <a href="#">Editar receita</a>
-                    </div>
-                    <img src="/img/burgers.png">
 
-                    <div class="subtitle">
-                        <h2>Triplo Bacon Burger</h2>
-                        <p>por Jorge Relato</p>
-                    </div>
-                </section>
-
-                <section class="details">
-                    <div class="item">
-                        <div>Ingredientes</div>
-                        <div>
-                            <ul>
-                                <li>- 3kg de carne moída (escolha sua carne magra e macia);</li>
-                                <li>- 300g de bacon;</li>
-                                <li>- 1 ovo;</li>
-                                <li>- 3 colheres (sopa) de farinha de trigo;</li>
-                                <li>- 3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde
-                                    processados no liquidificador;
-                                </li>
-                                <li>- 30ml de água gelada;</li>
-                            </ul>
-                        </div>
+                <div class="cards-inforeceita">
+                    <div class="container-info">
+                        {% for inforeceita in inforeceitas%}
+                            <div class="container-card">
+                                <img src="{{ inforeceita.avatar_url }}" alt="">
+                                <div id="info-card">
+                                    <h3>{{ inforeceita.recipes_name }}</h3>
+                                    <p>por {{ inforeceita.recipes_author }}</p>
+                                    <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
 
-                    <div class="item">
-                        <div>Modo de preparo</div>
-                        <div>
-                            <ul>
-                                <li>- 3kg de carne moída (escolha sua carne magra e macia);</li>
-                                <li>- 300g de bacon;</li>
-                                <li>- 1 ovo;</li>
-                                <li>- 3 colheres (sopa) de farinha de trigo;</li>
-                                <li>- 3 colheres (sopa) de tempero caseiro: feito com alho, sal, cebola, pimenta e cheiro verde
-                                    processados no liquidificador;
-                                </li>
-                                <li>- 30ml de água gelada;</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="item">
-                        <div>Informações adicionais</div>
-                        <div>
-                            <p></p>
-
-                            <p></p>   
-                        </div>
-                    </div>
-                </section>
+                </div>
             </div>
 
         {% endblock%}
-
-            
-
     </body>
 </html>

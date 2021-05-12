@@ -54,7 +54,7 @@ body {
 }
 
 #logoWhite img{
-    margin-left: 165px;
+    margin-left: 145px;
     margin-top: 16px;
 }
 /* Background (index) */
@@ -440,6 +440,61 @@ button[type="button"] {
    
    right: 140px;
 
+}
+
+/* Index - Inforeceita */
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.container h2 {
+    margin-top: 50px;
+    margin-left: 8px;
+}
+
+.container-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80vw;
+}
+
+.container-card {
+    display: flex;
+    width: 40vw;
+    padding: 10px;
+
+    margin-top: 20px;
+}
+
+#info-card{
+    margin-left: 20px;
+}
+
+.container-card img{
+    width: 172px;
+    height: 80px;
+    border-radius: 8px;
+}
+
+.container-card h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.container-card p {
+    font-size: 14px;
+    color: #777;
+    line-height: 26px;
+}
+
+.container-card a {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #6558C3;
 }
 
 
