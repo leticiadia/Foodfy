@@ -4,8 +4,8 @@
   "main": "script.js",
   "scripts": {
     "start": "npm-run-all -p nodemon browsersync",
-    "nodemon": "nodemon server.js",
-    "browsersync": "browser-sync start --proxy http://localhost:5003 --files 'public, views'"
+    "nodemon": "nodemon src/server.js",
+    "browsersync": "browser-sync start --proxy http://localhost:5003 --files 'public, src/app/views'"
   },
   "bugs": {
     "url": "https://github.com/leticiadia/Foodfy/issues"
@@ -14,7 +14,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "nunjucks": "^3.2.3"
+    "nunjucks": "^3.2.3",
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.14",
