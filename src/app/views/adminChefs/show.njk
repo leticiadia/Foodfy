@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div id="logoWhite">
+                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+            </div>
+        </header>
+
+        {% block content%}
+            <div>
+                <section>
+                    <div class="name_chef">
+                        <h3>Chef: {{ chef.name }}</h3>
+                        <a href="/chefs/chefs/{{ chef.id }}/edit">Editar chef</a>
+                    </div>
+                </section>
+
+                <section class="chefs">
+                    <div class="chef_image">
+                        <img src="{{ chef.avatar_url }}">
+                    </div>  
+
+                    <div class="subname_chef">
+                        <h2>{{ chef.name }}</h2>
+                    </div>
+                </section>
+            </div>
+        {% endblock%}
+        
+    </body>
+</html>
