@@ -442,7 +442,7 @@ button[type="button"] {
 
 }
 
-/* Index - Inforeceita */
+/* Index - Inforeceita 
 .container{
     display: grid;
     justify-content: center;
@@ -467,30 +467,55 @@ button[type="button"] {
 
     margin-top: 20px;
 }
+*/
 
-#info-card{
-    margin-left: 20px;
+.recipes-container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
-.container-card img{
+.page-title{
+    margin-top: 50px;
+}
+
+.recipes-admin {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin-top: 20px;
+}
+
+.recipe-card{
+    display: flex;
+    flex-wrap: wrap;
+    height: 20vh;
+    width: 35vw;
+}
+
+.images-recipes {
     width: 172px;
     height: 80px;
     border-radius: 8px;
 }
 
-.container-card h3 {
+#info-card{
+    margin-left: 20px;
+}
+
+#info-card h3{
     font-weight: 500;
     font-size: 18px;
     line-height: 28px;
 }
 
-.container-card p {
+#info-card p{
     font-size: 14px;
     color: #777;
     line-height: 26px;
 }
 
-.container-card a {
+#info-card a{
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;

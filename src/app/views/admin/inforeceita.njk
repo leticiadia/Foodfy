@@ -17,25 +17,27 @@
         </header>
 
         {% block content%}
-            <div class="container">
-                  <h2>Gerenciar receitas</h2>
-
-
-                <div class="cards-inforeceita">
-                    <div class="container-info">
-                        {% for inforeceita in inforeceitas%}
-                            <div class="container-card">
-                                <img src="{{ inforeceita.image }}" alt="">
-                                <div id="info-card">
-                                    <h3>{{ inforeceita.title }}</h3>
-                                    <p>por {{ inforeceita.name }}</p>
-                                    <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
-                                </div>
+            <div class="recipes-container">
+                <section>
+                    <div class="page-title">
+                        <h2>Gerenciar Receitas</h2>
+                    </div> 
+                </section>
+                
+                <section class="recipes-admin">
+                    {% for inforeceita in inforeceitas %}
+                        <div class="recipe-card">
+                            <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
+                
+                            <div id="info-card">
+                                <h3>{{ inforeceita.title }}</h3>
+                                <p>por {{ inforeceita.name }}</p>
+                                <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
                             </div>
-                        {% endfor %}
-                    </div>
-
-                </div>
+                        </div>
+                        
+                    {% endfor %}
+                </section>
             </div>
 
         {% endblock%}
