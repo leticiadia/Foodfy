@@ -30,7 +30,7 @@ module.exports = {
         Inforeceita.find(req.params.id, function(inforeceita){
             if(!inforeceita) return res.send('Receita não encontrada!')
 
-            inforeceita.create_at = date(inforeceita.create_at).format
+            inforeceita.created_at = date(inforeceita.created_at).format
 
 
             return res.render('admin/show', { inforeceita })
