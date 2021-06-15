@@ -16,8 +16,8 @@
             </div>
         </header>
 
-        {% block content%}
-            <div>
+        {% block content %}
+             <div>
                 <section>
                     <div class="name_chef">
                         <h3>Chef: {{ chef.name }}</h3>
@@ -32,6 +32,9 @@
 
                     <div class="subname_chef">
                         <h2>{{ chef.name }}</h2>
+                        {% for chef in chefs %}
+                            <p>{{chef.total_recipes}} receitas</p>
+                        {% endfor %}
                     </div>
 
                      <div class="createDate">
@@ -40,7 +43,7 @@
                     </div>
                 </section>
             </div>
-        {% endblock%}
+        {% endblock %}
         
     </body>
 </html>

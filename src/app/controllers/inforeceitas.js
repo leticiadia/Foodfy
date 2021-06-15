@@ -9,7 +9,9 @@ module.exports = {
     },
 
     create(req, res){
-
+        Inforeceita.chefSelectOptions(function(options){
+            return res.render('admin/create', { chefOptions: options })
+        })
     },
 
     post(req, res){
@@ -41,7 +43,9 @@ module.exports = {
         Inforeceita.find(req.params.id, function(inforeceita){
             if(!inforeceita) return res.send('Receita não encontrada!')
 
-            return res.render('admin/edit', { inforeceita })
+            Inforeceita.chefSelectOptions(function(options){
+                return res.render('admin/edit', { inforeceita, chefOptions: options })
+            })
         })
     },
 

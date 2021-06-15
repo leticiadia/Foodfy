@@ -15,9 +15,7 @@ routes.get('/sobre', function(req, res){
 
 routes.get('/admin/inforeceitas', inforeceitas.index)
 
-routes.get('/admin/inforeceitas/create', function(req, res){
-    return res.render('admin/create')
-})
+routes.get('/admin/inforeceitas/create', inforeceitas.create)
 
 routes.get('/admin/inforeceitas/:id', inforeceitas.show)
 

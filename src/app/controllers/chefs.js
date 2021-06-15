@@ -32,9 +32,11 @@ module.exports = {
 
             chef.created_at = date(chef.created_at).format
 
+            Chef.all(function(chefs){
+                return res.render('adminChefs/show', {chef, chefs })
+            })
 
-            return res.render('adminChefs/show', { chef })
-        })
+        })    
     },
 
     edit(req, res){
