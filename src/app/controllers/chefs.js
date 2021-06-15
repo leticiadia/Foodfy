@@ -9,7 +9,7 @@ module.exports = {
     },
 
     create(req, res){
-
+        return res.render('adminChefs/create')
     },
 
     post(req, res){
@@ -30,7 +30,7 @@ module.exports = {
         Chef.find(req.params.id, function(chef){
             if(!chef) return res.send('Receita não encontrada!')
 
-            chef.create_at = date(chef.create_at).format
+            chef.created_at = date(chef.created_at).format
 
 
             return res.render('adminChefs/show', { chef })

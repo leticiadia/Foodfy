@@ -33,9 +33,7 @@ routes.delete('/admin/inforeceitas', inforeceitas.delete)
 
 routes.get('/chefs/chefs', chefs.index)
 
-routes.get('/chefs/chefs/create', function(req, res){
-    return res.render('adminChefs/create')
-})
+routes.get('/chefs/chefs/create', chefs.create)
 
 routes.get('/chefs/chefs/:id', chefs.show)
 

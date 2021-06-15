@@ -442,33 +442,6 @@ button[type="button"] {
 
 }
 
-/* Index - Inforeceita 
-.container{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
-.container h2 {
-    margin-top: 50px;
-    margin-left: 8px;
-}
-
-.container-info{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 80vw;
-}
-
-.container-card {
-    display: flex;
-    width: 40vw;
-    padding: 10px;
-
-    margin-top: 20px;
-}
-*/
-
 .recipes-container{
     display: grid;
     justify-content: center;
@@ -564,9 +537,46 @@ button[type="button"] {
     font-weight: 600;
 }
 
+.createDate div:nth-child(1) {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 38px;
 
+}
 
+.createDate div:nth-child(2){
+    font-size: 18px;
+    color: #444;
+    line-height: 28px;
+}
 
+/* CHEFS - LISTAGEM */
+.chefs-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
 
+.chefs-admin {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin-top: 20px;
+}
+
+.chef-card {
+    display: flex;
+    flex-wrap: wrap;
+    height: 10vh;
+    width: 17vw;
+
+    align-items: center;
+}
+
+.images-chefs {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+}
 
 

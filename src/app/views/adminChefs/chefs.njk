@@ -19,26 +19,27 @@
         </header>
 
         {% block content%}
-            <div class="container">
-                  <h2>Gerenciar chefs</h2>
 
-
-                <div class="cards-chefs">
-                    <div class="container-info">
-                        {% for chef in chefs %}
-                            <div class="container-card">
-                                <img src="{{ chef.avatar_url }}" alt="">
-                                <div id="info-card">
-                                    <h3>{{ chef.name }}</h3>
-                                    <a href="/chefs/chefs/{{ chef.id }}">Visualizar</a>
-                                </div>
+        <div class="chefs-container">
+                <section>
+                    <div class="page-title">
+                        <h2>Gerenciar Chefs</h2>
+                    </div> 
+                </section>
+                
+                <section class="chefs-admin">
+                    {% for chef in chefs %}
+                        <div class="chef-card">
+                            <img src="{{ chef.avatar_url }}" class="images-chefs"  alt="">
+                
+                            <div id="info-card">
+                                <p>{{ chef.name }}</p>
+                                <a href="/chefs/chefs/{{ chef.id }}">Visualizar</a>
                             </div>
-                        {% endfor %}
-                    </div>
-
-                </div>
+                        </div>
+                    {% endfor %}
+                </section>
             </div>
-
         {% endblock%}
     </body>
 </html>
