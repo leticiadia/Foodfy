@@ -1,6 +1,5 @@
 const Chef = require('../models/chef')
 const { date } = require('../../lib/utils')
-const inforeceitas = require('./inforeceitas')
 module.exports = {
 
     index(req, res){
@@ -33,8 +32,8 @@ module.exports = {
 
             chef.created_at = date(chef.created_at).format
 
-            Chef.findChefRecipe(function(inforeceita){
-                return res.render('adminChefs/show', { chef, findRecipes: inforeceita })
+            Chef.findChefRecipe(req.params.id, function(inforeceita){
+                return res.render('adminChefs/show', { chef, inforeceita})
             })
         })    
     },

@@ -503,8 +503,7 @@ button[type="button"] {
     align-items: center;
 }
 
-.name_chef, 
-.createDate{
+.name_chef {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -546,8 +545,13 @@ button[type="button"] {
     font-weight: 500;
 }
 
-.createDate div:nth-child(1) {
-    font-size: 24px;
+.createDate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.createDate h3 {
     font-weight: 600;
     line-height: 38px;
 }
@@ -556,6 +560,7 @@ button[type="button"] {
     font-size: 18px;
     color: #444;
     line-height: 28px;
+    margin-left: 5px;
 }
 
 /* CHEFS - LISTAGEM */
@@ -586,5 +591,16 @@ button[type="button"] {
     height: 64px;
     border-radius: 100%;
 }
+
+
+/*RECIPES - SHOW */
+.recipes{
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
 
 

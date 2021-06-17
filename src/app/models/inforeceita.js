@@ -16,20 +16,18 @@ module.exports = {
             INSERT INTO recipes (
                 image,
                 title,
-                name,
                 ingredients,
                 preparation,
                 information,
                 created_at,
                 chef_id
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+            ) VALUES ($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
             
         const values = [
             data.image,
             data.title,
-            data.name,
             data.ingredients,
             data.preparation,
             data.information,
@@ -43,6 +41,13 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    chefSelectOptions(callback){
+        db.query(`SELECT name, id FROM chefs`, function(err, results){
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    },
     find(id, callback){
         db.query(`SELECT * FROM recipes WHERE id = $1`, [id], function(err, results){
             if(err) throw `Database Error! ${err}`
@@ -50,23 +55,33 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    findChefName(callback){
+        db.query(`
+        SELECT chefs.id, name
+        FROM chefs
+        LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+        ORDER BY name
+        `, function(err, results){
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+    },
     update(data, callback){
         const query = `
             UPDATE recipes SET 
                 image=($1),
                 title=($2),
-                name=($3),
-                ingredients=($4),
-                preparation=($5),
-                information=($6),
-                chef_id=($7)
-            WHERE id = $8
+                ingredients=($3),
+                preparation=($4),
+                information=($5),
+                chef_id=($6)
+            WHERE id = $7
         `
 
         const values = [
             data.image,
             data.title,
-            data.name,
             data.ingredients,
             data.preparation,
             data.information,
@@ -87,13 +102,5 @@ module.exports = {
 
             callback()
         })
-    },
-    chefSelectOptions(callback){
-        db.query(`SELECT name, id FROM recipes`, function(err, results){
-            if(err) throw `Database Error! ${err}`
-
-            callback(results.rows)
-        })
     }
-
 }

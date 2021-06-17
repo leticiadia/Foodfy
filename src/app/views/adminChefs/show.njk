@@ -38,22 +38,20 @@
 
                 <section class="recipes">
                     <h2>Receitas</h2>
-                    {% for inforeceita in findRecipes %}
-                        <div class="recipe-card">
-                            <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
-                
-                            <div id="info-card">
-                                <h3>{{ inforeceita.title }}</h3>
-                                <p>por {{ inforeceita.name }}</p>
-                                <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
-                            </div>
+                    <div class="recipe-card">
+                        <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
+                        <div id="info-card">
+                            <h3>{{ inforeceita.title }}</h3>
+                            <p>por {{ inforeceita.name }}</p>
+                            <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
                         </div>
-                    {% endfor %}  
-                </section>
-                 <div class="createDate">
-                        <div>Desde</div>
-                        <div>{{ chef.created_at }}</div>
                     </div>
+                </section>
+                
+                <div class="createDate">
+                    <h3>Criado em:</h3>
+                    <div>{{ chef.created_at }}</div>
+                </div>
             </div>
         {% endblock %}
         

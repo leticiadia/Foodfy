@@ -28,7 +28,7 @@
 
                     <div class="subtitle">
                         <h2>{{ inforeceita.title }}</h2>
-                        <p>por {{ inforeceita.name }}</p>
+                        <p>por {{ chef.name }}</p>
                     </div>
                 </section>
 
@@ -66,10 +66,10 @@
                     </div>
 
 
-                    <div class="item">
-                        <div>Desde</div>
-                        <div>{{ inforeceita.created_at }}</div>
-                    </div>
+                   <div class="createDate">
+                    <h3>Criado em:</h3>
+                    <div>{{ inforeceita.created_at }}</div>
+                  </div>
                     
                 </section>
             </div>

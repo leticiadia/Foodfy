@@ -34,8 +34,9 @@ module.exports = {
 
             inforeceita.created_at = date(inforeceita.created_at).format
 
-
-            return res.render('admin/show', { inforeceita })
+            Inforeceita.findChefName(function(chef){
+                return res.render('admin/show', { inforeceita, chef })
+            })   
         })
     },
 
