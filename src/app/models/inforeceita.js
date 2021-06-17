@@ -55,16 +55,16 @@ module.exports = {
             callback(results.rows[0])
         })
     },
-    findChefName(callback){
+    findChefName(id, callback){
         db.query(`
-        SELECT chefs.id, name
-        FROM chefs
-        LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
-        ORDER BY name
-        `, function(err, results){
+        SELECT name  
+        FROM chefs 
+        LEFT JOIN recipes ON (chefs.id = recipes.chef_id) 
+        WHERE recipes.id = $1 
+        GROUP BY chefs.id`,[id], function(err, results){
             if(err) throw `Database Error! ${err}`
 
-            callback(results.rows)
+            callback(results.rows[0])
         })
     },
     update(data, callback){

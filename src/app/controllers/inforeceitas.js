@@ -4,7 +4,10 @@ module.exports = {
 
     index(req, res){
         Inforeceita.all(function(inforeceitas){
-            return res.render('admin/inforeceita', { inforeceitas })
+
+            Inforeceita.findChefName(req.params.id, function(chef){
+                return res.render('admin/inforeceita', { chef, inforeceitas })
+            })   
         })
     },
 
@@ -34,8 +37,8 @@ module.exports = {
 
             inforeceita.created_at = date(inforeceita.created_at).format
 
-            Inforeceita.findChefName(function(chef){
-                return res.render('admin/show', { inforeceita, chef })
+            Inforeceita.findChefName(req.params.id, function(chef){
+                return res.render('admin/show', { chef, inforeceita })
             })   
         })
     },
