@@ -4,10 +4,7 @@ module.exports = {
 
     index(req, res){
         Inforeceita.all(function(inforeceitas){
-
-            Inforeceita.findChefName(req.params.id, function(chef){
-                return res.render('admin/inforeceita', { chef, inforeceitas })
-            })   
+            return res.render('admin/inforeceita', { inforeceitas })
         })
     },
 

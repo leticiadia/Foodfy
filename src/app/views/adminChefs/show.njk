@@ -20,7 +20,7 @@
              <div>
                 <section>
                     <div class="name_chef">
-                        <h3>Chef: {{ chef.name }}</h3>
+                        <h2>Chef: {{ chef.name }}</h2>
                         <a href="/chefs/chefs/{{ chef.id }}/edit">Editar chef</a>
                     </div>
                 </section>
@@ -36,20 +36,30 @@
                     </div>
                 </section>
 
-                <section class="recipes">
-                    <h2>Receitas</h2>
-                    <div class="recipe-card">
-                        <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
-                        <div id="info-card">
-                            <h3>{{ inforeceita.title }}</h3>
-                            <p>por {{ inforeceita.name }}</p>
-                            <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
-                        </div>
+
+                 <section>
+                    <div class="title-recipes">
+                        <h3>Receitas</h3>
+                    </div> 
+                </section>
+
+                <section>
+                    <div class="recipes">
+                        {% for inforeceita in inforeceitas %}
+                            <div class="recipes-card">
+                                <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
+                                <div id="info-card">
+                                    <h3>{{ inforeceita.title }}</h3>
+                                    <p>por {{ inforeceita.name }}</p>
+                                    <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 </section>
                 
                 <div class="createDate">
-                    <h3>Criado em:</h3>
+                    <p>Criado em:</p>
                     <div>{{ chef.created_at }}</div>
                 </div>
             </div>
