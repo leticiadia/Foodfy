@@ -1,29 +1,27 @@
 {% extends "layout.njk" %}
 
 {% block content %}
+
+    <div class="container-father">
         <div id="plano-de-fundo">
             <h1>As melhores receitas</h1>
             <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p> 
             <img src="img/chefs.png" alt="Um chef de cozinha com uma bandeja, saindo dela uma fumacinha de comida quente em sua mão esquerda. No fundo uma cor rosa claro.">   
         </div>
 
-  <section class="flex-container">
+        <h2>Mais acessadas</h2>
+        <section class="mostPopularRecipes">
+            {% for inforeceita in inforeceitas %}
+                <div class="mostPopularCard">
+                    <img src="{{ inforeceita.image }}" class="image-recipe"  alt="">
 
-    {% for item in items %}
-            <div class="flex-item card" id="{{ item.id }}">
-                <div class="card_img">
-                    <img src="{{ item.image }}" alt="Imagem de {{ item.title }}" class="small_img">
+                    <div id="informations-card">
+                        <h3>{{ inforeceita.title }}</h3>
+                        <p>por {{ inforeceita.chef_name }}</p>
+                    </div>
                 </div>
-
-                <div class="card_content">
-                    <p class="text_p">{{ item.title }}</p>                   
-                </div>
-
-                <div class="card_info">
-                    <p>{{ item.author }}</p>
-                </div>
-            </div>
-    {% endfor %}
-  </section>
+            {% endfor %}
+        </section>
+    </div>
 {% endblock %}
 

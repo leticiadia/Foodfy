@@ -1,11 +1,13 @@
 const express = require('express')
 const inforeceitas = require('./app/controllers/inforeceitas')
 const chefs = require('./app/controllers/chefs')
-
+const Inforeceita = require('./app/models/inforeceita')
 const routes = express.Router()
 
 routes.get('/', function(req, res){
-    return res.render('index')
+    Inforeceita.all(function(inforeceitas){
+        return res.render('index', { inforeceitas })
+    })
 })
 
 routes.get('/sobre', function(req, res){
