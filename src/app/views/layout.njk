@@ -11,14 +11,21 @@
     </head>
     <body>
         <header>
-            <div class="main-menu">
-                <a href="/sobre" class="active">Sobre</a>
-                <a href="/admin/inforeceitas">Receitas</a>
-                <a href="/chefs/chefs">Chefs</a>
-            </div>
-
-            <div id="logo">
-                <a href="/"><img src="img/logoMain.png" alt="Logo da página"></a>
+            <div class="containerMain">
+                <div id="logo">
+                    <a href="/"><img src="img/logoMain.png" alt="Logo da página"></a>
+                </div>
+                <div class="main-menu">
+                    <a href="/sobre" class="active">Sobre</a>
+                    <a href="/admin/inforeceitas">Receitas</a>
+                    <a href="/chefs/chefs">Chefs</a>
+                </div>
+                <div class="header">
+                    <form action="/search" method="get">
+                        <input type="text" name="filter" placeholder="Buscar uma receita" value="{{filter}}" id="inputFilter">
+                        <button type="submit">Filtrar</button>
+                    </form>
+                </div>
             </div>
         </header>
 
