@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+
+
+{% block content %}
+  <div class="recipes-container">
+    <h2>Buscando por "{{filter}}"</h2>
+    <section class="recipes-admin">
+        {% for inforeceita in inforeceitas %}
+            <div class="recipe-card">
+                <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
+    
+                <div id="info-card">
+                    <h3>{{ inforeceita.title }}</h3>
+                    <p>por {{ inforeceita.chef_name }}</p>
+                    <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+  </div>
+
+{% endblock %}
