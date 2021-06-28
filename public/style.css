@@ -22,8 +22,20 @@ h2 {
 }
 
 /* Menu */
-.main-menu{
-    margin: 50px 300px;
+
+.containerMain{
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+
+   margin-top: 30px;
+}
+
+.containerMain .header form{
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    grid-gap: 8px;
 }
 
 .main-menu a {
@@ -44,11 +56,6 @@ h2 {
     font-weight: 600;
 }
 
-#logo {
-   margin-top: -73px;
-   margin-left: 150px;
-}
-
 #logoWhite {
     width: 100%;
     padding: 15px;
@@ -56,9 +63,9 @@ h2 {
     box-sizing: border-box;
 }
 
-#logoWhite img{
-    margin-left: 145px;
-    margin-top: 16px;
+#inputFilter{
+    width: 170px;
+    height: 35px;
 }
 
 .container-father{
@@ -518,6 +525,7 @@ button[type="button"] {
 }
 
 
+/* FIlter */
 
 
 
