@@ -3,9 +3,18 @@ const { date } = require('../../lib/utils')
 module.exports = {
 
     index(req, res){
-        Inforeceita.all(function(inforeceitas){
-            return res.render('admin/inforeceita', { inforeceitas })
-        })
+        const { filter } = req.query
+
+        if(filter){
+            Inforeceita.findBy(filter, function(inforeceitas){
+                return res.render('search', { inforeceitas, filter })
+            })
+        }
+        else{
+            Inforeceita.all(function(inforeceitas){
+                return res.render('admin/inforeceita', { inforeceitas })
+            })
+        }        
     },
 
     create(req, res){
