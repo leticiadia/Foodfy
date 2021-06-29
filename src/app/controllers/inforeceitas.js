@@ -20,7 +20,7 @@ module.exports = {
                     page
                 }
 
-                return res.render('admin/inforeceita', { inforeceitas, filter, pagination })
+                return res.render('admin/inforeceita', { inforeceitas, pagination , filter})
             }
         }
 
