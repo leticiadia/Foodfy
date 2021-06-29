@@ -29,7 +29,7 @@ routes.put('/admin/inforeceitas', inforeceitas.put)
 
 routes.delete('/admin/inforeceitas', inforeceitas.delete)
 
-routes.get('/search', inforeceitas.index)
+routes.get('/search', inforeceitas.search)
 
 
 
