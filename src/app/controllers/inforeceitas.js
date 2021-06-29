@@ -3,18 +3,28 @@ const { date } = require('../../lib/utils')
 module.exports = {
 
     index(req, res){
-        const { filter } = req.query
+        let { filter, page, limit } = req.query
 
-        if(filter){
-            Inforeceita.findBy(filter, function(inforeceitas){
-                return res.render('search', { inforeceitas, filter })
-            })
+        page = page || 1  
+        limit = limit || 2
+        let offset = limit * (page - 1)
+
+        const params = {
+            filter, 
+            page, 
+            limit,
+            offset,
+            callback(inforeceitas){
+                const pagination = {
+                    total: Math.ceil(inforeceitas[0].total / limit),
+                    page
+                }
+
+                return res.render('admin/inforeceita', { inforeceitas, filter, pagination })
+            }
         }
-        else{
-            Inforeceita.all(function(inforeceitas){
-                return res.render('admin/inforeceita', { inforeceitas })
-            })
-        }        
+
+        Inforeceita.paginate(params)
     },
 
     create(req, res){
@@ -78,6 +88,20 @@ module.exports = {
         Inforeceita.delete(req.body.id, function(){
             return res.redirect(`/admin/inforeceitas`)
         })
+    },
+    search(req, res){
+        const { filter } = req.query
+
+        if(filter){
+            Inforeceita.findBy(filter, function(inforeceitas){
+                return res.render('search', { inforeceitas, filter })
+            })
+        }
+        else{
+            Inforeceita.all(function(inforeceitas){
+                return res.render('index', { inforeceitas })
+            })
+        }   
     }
 }
 
