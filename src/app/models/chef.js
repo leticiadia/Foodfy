@@ -91,5 +91,44 @@ module.exports = {
 
             callback(results.rows)
         })
+    },
+    paginate(params){
+        const { filter, limit, offset, callback} = params
+
+        let query = '',
+            filterQuery = '',
+            totalQuery = `(
+                SELECT count(*) FROM chefs
+            ) AS total`
+        
+    
+        if( filter ){
+            filterQuery = `
+            WHERE chefs.name ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM chefs 
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT chefs.*, ${totalQuery}, count(recipes) AS total_recipes
+        FROM chefs
+        LEFT JOIN recipes ON (chefs.id = recipes.chef_id)
+        GROUP BY chefs.id
+        ORDER BY total_recipes DESC
+        ${filterQuery}
+        LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function(err, results){
+            if(err) throw `Database Error! ${err}`
+
+            callback(results.rows)
+        })
+
+        
     }
 }
