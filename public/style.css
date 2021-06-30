@@ -406,6 +406,22 @@ button[type="button"] {
     color: #6558C3;
 }
 
+.pagination{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.pagination a,
+.pagination span {
+    text-decoration: none;
+    color: #777;
+    margin-right: 16px;
+}
+
+.pagination a:hover{
+    filter: brightness(.3);
+    border-bottom: 1px solid #777;
+}
 /* CHEFS */
 .chefs {
     display: grid;
