@@ -1,0 +1,63 @@
+.container #plano-de-fundo {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+    width: 100rem;
+    height: 36.6rem;
+    border-radius: 3rem;
+    background: var(--color--pink-light);
+    margin: 2.5rem auto;
+}
+
+.container #plano-de-fundo h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+}
+
+.container #plano-de-fundo p {
+    max-width: 32.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: rgba(0, 0, 0, .7);
+}
+
+.container #plano-de-fundo img {
+    width: 21.6rem;
+    height: 30rem;
+    margin-bottom: -7rem;
+}
+
+.container .mostPopularRecipes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 25rem;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 5rem;
+}
+
+.container .mostPopularCard {
+    margin-top: 20px;
+}
+
+.container .image-recipe{
+    width: 24rem;
+    height: 10rem;
+    
+    border-radius: 1.5rem;
+}
+
+.container #informations-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+    color: var(--color--black);
+}
+
+.container #informations-card p {
+    font-size: 1.4rem;
+    color: var(--color--grey);  
+}
