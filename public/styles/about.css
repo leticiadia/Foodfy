@@ -1,0 +1,63 @@
+.containerAbout{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-menu{
+    display: flex;
+    align-items: center;
+
+    margin-top: 3rem;
+}
+
+.about-menu{
+    margin-left: 12rem;
+}
+
+.about-menu a {
+    color: var(--color--black);
+}
+
+.about-menu a + a{
+    margin-left: 3.2rem;
+}
+
+.contentAbout {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentAbout h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--color--black);
+    font-size: 2.4rem;
+    line-height: 2.8rem;
+    max-width: 94rem;
+
+    margin-top: 4.6rem;
+    margin-bottom: 2rem;
+}
+
+.contentAbout h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: var(--color--black);
+    font-size: 2rem;
+    line-height: 2.4rem;
+    max-width: 94rem;
+
+    margin-bottom: 2rem;
+}
+
+.contentAbout p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: #444;
+    max-width: 94rem;
+
+    margin-bottom: 2rem;
+}
