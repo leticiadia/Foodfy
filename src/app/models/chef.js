@@ -81,11 +81,10 @@ module.exports = {
     },
     findChefRecipe(id, callback){
         db.query(`
-        SELECT recipes.*
+        SELECT recipes.*, chefs.name AS chef_name
         FROM recipes
         LEFT JOIN chefs ON (chefs.id = recipes.chef_id)
         WHERE chefs.id = $1
-        GROUP BY recipes.id
         `, [id], function(err, results){
             if(err) throw `Database Error! ${err}`
 
