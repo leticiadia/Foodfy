@@ -5,78 +5,80 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
-        <link rel="stylesheet" href="/style.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/recipes.css">
     </head>
     <body>
-        <header>
-            <div id="logoWhite">
-                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
-            </div>
-        </header>
-
-        {% block content%}
-
-            <div class="card">
-                <section class="avatar">
-                    <div class="title">
-                        <h3>Receita: {{ inforeceita.title }}</h3>
-                        <a href="/admin/inforeceitas/{{ inforeceita.id }}/edit">Editar receita</a>
+        <div class="content">
+            <header>
+                <div class="secondMenu">
+                    <div id="logoWhite">
+                        <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
                     </div>
-                        <img src="{{ inforeceita.image }}">
-
-                    <div class="subtitle">
-                        <h2>{{ inforeceita.title }}</h2>
-                        <p>por {{ chef.name }}</p> 
+                    <div class="linksMenu">
+                        <a href="/admin/inforeceitas">Receitas</a>
+                        <a href="/chefs/chefs">Chefs</a>
                     </div>
-                </section>
+                </div>
+            </header>
 
-                <section class="details">
-                    <div class="item">
-                        <div>Ingredientes</div>
-                        <div>
-                            <ul>
-                                {% for ingredient in inforeceita.ingredients %}
-                                    <li>- {{ ingredient }};</li>
-                                {% endfor %}
-                            </ul>
+            {% block content%}
+                <div class="card">
+                    <section class="avatar">
+                        <div class="title">
+                            <h2>Receita: {{ inforeceita.title }}</h2>
+                            <a href="/admin/inforeceitas/{{ inforeceita.id }}/edit">Editar receita</a>
                         </div>
                         
-                    </div>
+                        <img src="{{ inforeceita.image }}">
 
-                    <div class="item">
-                        <div>Modo de preparo</div>
-                        <div>
-                            <ul>
-                                {% for preparation in inforeceita.preparation %}
-                                    <li>- {{ preparation }};</li>
+                        <div class="subtitle">
+                            <h2>{{ inforeceita.title }}</h2>
+                            <p>por {{ chef.name }}</p> 
+                        </div>
+                    </section>
+
+                    <section class="details">
+                        <div class="item">
+                            <div>Ingredientes</div>
+                            <div>
+                                <ul>
+                                    {% for ingredient in inforeceita.ingredients %}
+                                        <li>- {{ ingredient }};</li>
+                                    {% endfor %}
+                                </ul>
+                            </div> 
+                        </div>
+
+                        <div class="item">
+                            <div>Modo de preparo</div>
+                            <div>
+                                <ul>
+                                    {% for preparation in inforeceita.preparation %}
+                                        <li>- {{ preparation }};</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div>Informações adicionais</div>
+                            <div>
+                                {% for information in inforeceita.information %}
+                                    <p>{{ information }}</p>  
                                 {% endfor %}
-                            </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="item">
-                        <div>Informações adicionais</div>
-                        <div>
-                            {% for information in inforeceita.information %}
-                                <p>{{ information }}</p>  
-                            {% endfor %}
+
+                        <div class="createDate">
+                            <h2>Criado em:</h2>
+                            <div>{{ inforeceita.created_at }}</div>
                         </div>
-                    </div>
-
-
-                   <div class="createDate">
-                    <h3>Criado em:</h3>
-                    <div>{{ inforeceita.created_at }}</div>
-                  </div>
-                    
-                </section>
-            </div>
-
-        {% endblock%}
-
-            
-
+                        
+                    </section>
+                </div>
+            {% endblock%}
+        </div>
     </body>
 </html>

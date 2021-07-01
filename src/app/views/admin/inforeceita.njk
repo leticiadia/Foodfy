@@ -5,41 +5,49 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
-        <link rel="stylesheet" href="/style.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/recipes.css">
     </head>
     <body>
-        <header>
-            <div id="logoWhite">
-                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
-            </div>
-        </header>
+        <div class="content">
+            <header>
+                <div class="secondMenu">
+                    <div id="logoWhite">
+                        <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+                    </div>
+                    <div class="linksMenu">
+                        <a href="/admin/inforeceitas">Receitas</a>
+                        <a href="/chefs/chefs">Chefs</a>
+                    </div>
+                </div>
+            </header>
 
-        {% block content%}
-            <div class="recipes-container">
-                <section>
-                    <div class="page-title">
-                        <h2>Gerenciar Receitas</h2>
-                    </div> 
-                </section>
-                
-                <section class="recipes-admin">
-                    {% for inforeceita in inforeceitas %}
-                        <div class="recipe-card">
-                            <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
-                
-                            <div id="info-card">
-                                <h3>{{ inforeceita.title }}</h3>
-                                <p>por {{ inforeceita.chef_name }}</p>
-                                <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
+            {% block content%}
+                <div class="recipes-container">
+                    <section>
+                        <div class="page-title">
+                            <h2>Gerenciar Receitas</h2>
+                        </div> 
+                    </section>
+                    
+                    <section class="recipes-admin">
+                        {% for inforeceita in inforeceitas %}
+                            <div class="recipe-card">
+                                <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
+                    
+                                <div id="info-card">
+                                    <h3>{{ inforeceita.title }}</h3>
+                                    <p>por {{ inforeceita.chef_name }}</p>
+                                    <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
+                                </div>
                             </div>
-                        </div>
-                    {% endfor %}
-                </section>
-                <div class="pagination" data-page={{pagination.page}} data-total={{pagination.total}} data-filter={{filter}}></div> 
-            </div>
-            <script src="/script.js"></script>
-        {% endblock%}
+                        {% endfor %}
+                    </section>
+                    <div class="pagination" data-page={{pagination.page}} data-total={{pagination.total}} data-filter={{filter}}></div> 
+                </div>
+                <script src="/script.js"></script>
+            {% endblock%}
+        </div>
     </body>
 </html>
