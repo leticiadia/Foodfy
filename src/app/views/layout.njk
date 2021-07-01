@@ -5,14 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="/style.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/home.css">
+        <link rel="stylesheet" href="/styles/about.css">
+        <link rel="stylesheet" href="/styles/style.css">
     </head>
     <body>
-        <header>
-            <div class="containerMain">
-                <div id="logo">
+        <div class="containerMain">
+            <header>
+                <div>
                     <a href="/"><img src="img/logoMain.png" alt="Logo da página"></a>
                 </div>
                 <div class="main-menu">
@@ -22,18 +23,18 @@
                 </div>
                 <div class="header">
                     <form action="/search" method="get">
-                        <input type="text" name="filter" placeholder="Buscar uma receita" value="{{filter}}" id="inputFilter">
+                        <input type="text" name="filter" placeholder="Buscar uma receita" value="{{filter}}">
                         <button type="submit">Filtrar</button>
                     </form>
                 </div>
-            </div>
-        </header>
+            </header>
+    
 
-        {% block content %}{% endblock %}
+            {% block content %}{% endblock %}
 
-        <footer class="rodape_final">
-            <p>Todos direitos reservados, receitas Foodfy</p>
-        </footer>
-
+            <footer class="rodape_final">
+                <p>Todos direitos reservados, receitas Foodfy</p>
+            </footer>
+        </div>
     </body>
 </html>
