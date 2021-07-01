@@ -5,19 +5,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
-        <link rel="stylesheet" href="/style.css" type="text/css">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/chefs.css">
+        <link rel="stylesheet" href="/styles/recipes.css">
+        <link rel="stylesheet" href="/styles/global.css">
     </head>
     <body>
-        <header>
-            <div id="logoWhite">
-                <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
-            </div>
-        </header>
+        <div class="content">
+            <header>
+                <div class="secondMenu">
+                    <div id="logoWhite">
+                        <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+                    </div>
+                    <div class="linksMenu">
+                        <a href="/admin/inforeceitas">Receitas</a>
+                        <a href="/chefs/chefs">Chefs</a>
+                    </div>
+                </div>
+            </header>
 
-        {% block content %}
-             <div>
+            {% block content %}
                 <section>
                     <div class="name_chef">
                         <h2>Chef: {{ chef.name }}</h2>
@@ -37,7 +43,7 @@
                 </section>
 
 
-                 <section>
+                <section>
                     <div class="title-recipes">
                         <h3>Receitas</h3>
                     </div> 
@@ -50,7 +56,7 @@
                                 <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
                                 <div id="info-card">
                                     <h3>{{ inforeceita.title }}</h3>
-                                    <p>por {{ inforeceita.name }}</p>
+                                    <p>por {{ inforeceita.chef_name }}</p>
                                     <a href="/admin/inforeceitas/{{ inforeceita.id }}">Visualizar</a>
                                 </div>
                             </div>
@@ -62,8 +68,7 @@
                     <p>Criado em:</p>
                     <div>{{ chef.created_at }}</div>
                 </div>
-            </div>
-        {% endblock %}
-        
+            {% endblock %}
+        </div>
     </body>
 </html>
