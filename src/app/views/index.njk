@@ -1,11 +1,15 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-    <div class="container-father">
+    <div class="container">
         <div id="plano-de-fundo">
-            <h1>As melhores receitas</h1>
-            <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p> 
-            <img src="img/chefs.png" alt="Um chef de cozinha com uma bandeja, saindo dela uma fumacinha de comida quente em sua mão esquerda. No fundo uma cor rosa claro.">   
+            <div class="info">
+                <h2>As melhores receitas</h2>
+                <p>Aprenda a construir os melhores pratos com receitas criadas por profissionais do mundo inteiro.</p> 
+            </div>
+            <div class="image">
+                <img src="img/chefs.png" alt="Um chef de cozinha com uma bandeja, saindo dela uma fumacinha de comida quente em sua mão esquerda. No fundo uma cor rosa claro.">   
+            </div>
         </div>
 
         <h2>Mais acessadas</h2>
@@ -15,7 +19,7 @@
                     <img src="{{ inforeceita.image }}" class="image-recipe"  alt="">
 
                     <div id="informations-card">
-                        <h3>{{ inforeceita.title }}</h3>
+                        <h2>{{ inforeceita.title }}</h2>
                         <p>por {{ inforeceita.chef_name }}</p>
                     </div>
                 </div>
