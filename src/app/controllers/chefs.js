@@ -52,7 +52,7 @@ module.exports = {
             chef.created_at = date(chef.created_at).format
 
             Chef.findChefRecipe(req.params.id, function(inforeceitas){
-                return res.render('adminChefs/show', { chef, inforeceitas})
+                return res.render('adminChefs/show', { chef, inforeceitas })
             })
         })    
     },
