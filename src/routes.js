@@ -33,18 +33,18 @@ routes.get('/search', inforeceitas.search)
 
 
 
-routes.get('/chefs/chefs', chefs.index)
+routes.get('/admin/chefs', chefs.index)
 
-routes.get('/chefs/chefs/create', chefs.create)
+routes.get('/admin/chefs/create', chefs.create)
 
-routes.get('/chefs/chefs/:id', chefs.show)
+routes.get('/admin/chefs/:id', chefs.show)
 
-routes.get('/chefs/chefs/:id/edit', chefs.edit)
+routes.get('/admin/chefs/:id/edit', chefs.edit)
 
-routes.post('/chefs/chefs', chefs.post)
+routes.post('/admin/chefs', chefs.post)
 
-routes.put('/chefs/chefs', chefs.put)
+routes.put('/admin/chefs', chefs.put)
 
-routes.delete('/chefs/chefs', chefs.delete)
+routes.delete('/admin/chefs', chefs.delete)
 
 module.exports = routes
