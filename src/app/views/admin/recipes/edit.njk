@@ -18,7 +18,7 @@
                     </div>
                     <div class="linksMenu">
                         <a href="/admin/inforeceitas">Receitas</a>
-                        <a href="/chefs/chefs">Chefs</a>
+                        <a href="/admin/chefs">Chefs</a>
                     </div>
                 </div>
             </header>
@@ -32,7 +32,7 @@
                                 <button type="submit" class="button_submit">Salvar receita</button>
                             </div>
                             
-                            {% include 'admin/fields.njk' %}
+                            {% include 'admin/recipes/fields.njk' %}
 
                             <input type="hidden" name="id" value="{{ inforeceita.id }}">
                         </form>

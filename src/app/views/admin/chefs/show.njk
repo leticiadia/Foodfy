@@ -5,9 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
-        <link rel="stylesheet" href="/styles/style.css">
-        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/chefs.css">
         <link rel="stylesheet" href="/styles/recipes.css">
+        <link rel="stylesheet" href="/styles/global.css">
     </head>
     <body>
         <div class="content">
@@ -18,24 +18,42 @@
                     </div>
                     <div class="linksMenu">
                         <a href="/admin/inforeceitas">Receitas</a>
-                        <a href="/chefs/chefs">Chefs</a>
+                        <a href="/admin/chefs">Chefs</a>
                     </div>
                 </div>
             </header>
 
-            {% block content%}
-                <div class="recipes-container">
-                    <section>
-                        <div class="page-title">
-                            <h2>Gerenciar Receitas</h2>
-                        </div> 
-                    </section>
-                    
-                    <section class="recipes-admin">
+            {% block content %}
+                <section>
+                    <div class="name_chef">
+                        <h2>Chef: {{ chef.name }}</h2>
+                        <a href="/admin/chefs/{{ chef.id }}/edit">Editar chef</a>
+                    </div>
+                </section>
+
+                <section class="chefs">
+                    <div class="chef_image">
+                        <img src="{{ chef.avatar_url }}">
+                    </div>  
+
+                    <div class="subname_chef">
+                        <h2>{{ chef.name }}</h2>
+                        <p>{{ chef.inforeceita_name }} receitas</p>
+                    </div>
+                </section>
+
+
+                <section>
+                    <div class="title-recipes">
+                        <h3>Receitas</h3>
+                    </div> 
+                </section>
+
+                <section>
+                    <div class="recipes">
                         {% for inforeceita in inforeceitas %}
-                            <div class="recipe-card">
+                            <div class="recipes-card">
                                 <img src="{{ inforeceita.image }}" class="images-recipes"  alt="">
-                    
                                 <div id="info-card">
                                     <h3>{{ inforeceita.title }}</h3>
                                     <p>por {{ inforeceita.chef_name }}</p>
@@ -43,11 +61,14 @@
                                 </div>
                             </div>
                         {% endfor %}
-                    </section>
-                    <div class="pagination" data-page={{pagination.page}} data-total={{pagination.total}} data-filter={{filter}}></div> 
+                    </div>
+                </section>
+                
+                <div class="createDate">
+                    <p>Criado em:</p>
+                    <div>{{ chef.created_at }}</div>
                 </div>
-                <script src="/script.js"></script>
-            {% endblock%}
+            {% endblock %}
         </div>
     </body>
 </html>

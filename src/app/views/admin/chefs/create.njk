@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/styles/chefs.css">
+        <link rel="stylesheet" href="/styles/recipes.css">
+        <link rel="stylesheet" href="/styles/global.css">
+    </head>
+    <body>
+        <div class="content">
+            <header>
+                <div class="secondMenu">
+                    <div id="logoWhite">
+                        <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+                    </div>
+                    <div class="linksMenu">
+                        <a href="/admin/inforeceitas">Receitas</a>
+                        <a href="/admin/chefs">Chefs</a>
+                    </div>
+                </div>
+            </header>
+
+
+            {% block content%}
+
+                <form class="card" method="POST" action="/admin/chefs">
+                    <section class="avatar">
+                        <div class="title">
+                            <h2>Criando chef</h2>
+                            <button type="submit" id="salvar-chef">Salvar chef</button>
+                        </div>
+                    </section>
+
+                    <section class="create">
+                        {% include 'admin/chefs/fields.njk' %}
+                    </section>
+                </form>
+
+                <script src="/script.js"></script>
+            {% endblock%}
+        </div> 
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Foodfy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/img/favicon.ico" type="/image/x-icon">
+        <link rel="stylesheet" href="/styles/style.css">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/recipes.css">
+    </head>
+    <body>
+        <div class="content">
+            <header>
+                <div class="secondMenu">
+                    <div id="logoWhite">
+                        <a href="/"><img src="/img/logo.png" alt="Logo da página"></a>
+                    </div>
+                    <div class="linksMenu">
+                        <a href="/admin/inforeceitas">Receitas</a>
+                        <a href="/admin/chefs">Chefs</a>
+                    </div>
+                </div>
+            </header>
+
+            {% block content%}
+                <div class="card">           
+                    <section class="edit"> 
+                        <form method="POST" action="/admin/chefs?_method=PUT">
+                            <div class="title-edit">
+                                <h2>Editando receita</h2>
+                                <button type="submit" class="button_submit">Salvar chef</button>
+                            </div>
+                            
+                            {% include 'admin/chefs/fields.njk' %}
+
+                            <input type="hidden" name="id" value="{{ chef.id }}">
+                        </form>
+
+                        <form id="form-delete" method="POST" action="/admin/chefs?_method=DELETE">
+                            
+                            <input type="hidden" name="id" value="{{ chef.id }}">
+
+                            <button type="submit" id="delete" class="button_submit">Deletar</button>
+
+                        </form> 
+                    </section>
+                </div>
+
+                <script src="/script.js"></script>
+            {% endblock%}
+        </div>
+    </body>
+</html>
